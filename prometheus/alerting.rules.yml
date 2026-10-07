@@ -1,0 +1,9 @@
+groups:
+- name: example
+  rules:
+  - alert: always down service
+    expr: up{job="always down service"} == 0 
+    for: 10s 
+    keep_firing_for: 5m
+    labels:
+      severity: normal

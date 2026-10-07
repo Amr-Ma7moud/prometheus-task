@@ -1,0 +1,13 @@
+global:
+  telegram_api_url: https://api.telegram.org
+route:
+  receiver: 'telegram-notifications'
+  continue: false
+  group_wait: 10s
+  group_interval: 5m
+receivers:
+- name: telegram-notifications
+  telegram_configs:
+    - bot_token_file: /etc/alertmanager/.botToken  
+      message: "Your Server is down Moron,Go and try to get your job back"
+      chat_id: 6284141552

@@ -3,10 +3,12 @@ services:
     image: prom/prometheus:latest
     ports:
       - "9090:9090"
-    volumes:
+    volumes: # all the needed files for Prom must be put here
       - ./prometheus:/etc/prometheus
 
   alertmanager:
     image: prom/alertmanager:latest
     ports:
       - "9093:9093"
+    volumes: # all the needed files for AM must be put here
+      - ./alertmanager:/etc/alertmanager
